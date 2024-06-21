@@ -5,6 +5,7 @@ tags:
   - cache
   - memcached
   - optimizations
+emoji: 🧠
 link: https://github.com/thundersquared/apiscp-memcached
 queries:
   - how to install memcached
