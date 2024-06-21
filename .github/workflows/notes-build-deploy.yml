@@ -14,21 +14,22 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4.1.1
+      - uses: actions/checkout@v4.1.7
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v4.0.2
         with:
-          node-version: 18
-          cache: yarn
+          node-version: 20
+          cache: bun
+      - uses: oven-sh/setup-bun@v1.2.2
       - name: Install all dependencies
-        run: yarn install --frozen-lockfile
+        run: bun install --frozen-lockfile
       - name: Build
-        run: yarn docs:build
-      - uses: actions/configure-pages@v4.0.0
+        run: bun run docs:build
+      - uses: actions/configure-pages@v5.0.0
       - uses: actions/upload-pages-artifact@v3.0.1
         with:
           path: .vitepress/dist
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4.0.4
+        uses: actions/deploy-pages@v4.0.5
