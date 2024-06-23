@@ -37,11 +37,11 @@ If you still chose to proceed with an in-place migration, **make sure your data 
 ## Procedure
 
 ```bash
-# Run bootstrapper
-upcp -sb
+# Temporarily disable Monit
+systemctl stop monit.service
 
 # Set new MariaDB version
-cpcmd scope:set cp.bootstrapper mariadb_version 10.11
+cpcmd scope:set cp.bootstrapper mariadb_version "10.11"
 
 # Make a copy of the repo definition
 mysql -v
