@@ -1,4 +1,10 @@
-# Local Development on ARM based Macs
+---
+title: Local Development on ARM based Macs
+tags:
+  - development
+  - mac
+emoji: 💻
+---
 
 1. Install [UTM](https://mac.getutm.app/)
 2. Set up an **emulated** x86 Rocky Linux 8 VM with UTM & QEMU. ([You can loosely follow along here](https://docs.getutm.app/basics/basics/))
